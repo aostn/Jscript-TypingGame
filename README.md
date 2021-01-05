@@ -1,1 +1,2 @@
 # Jscript-TypingGame
+s
