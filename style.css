@@ -13,7 +13,7 @@ body{
 .heading{
     margin-bottom: 20px;
     font-size: 3rem;
-    color:black;
+    color:#8debe9;
 }
 
 .header{
@@ -22,7 +22,7 @@ body{
 }
 
 .timer, .errors, .accuracy, .cpm, .wpm{
-    background-color: #ccda46;
+    background-color: #d5e6e5;
     height: 60px;
     width: 70px;
     margin: 8px;
@@ -46,7 +46,7 @@ body{
 } 
 
 .quote{
-    background-color: #ccda46;
+    background-color: #5f6161;
     font-size: 1.5rem;
     margin: 10px;
     padding: 25px;
@@ -54,7 +54,7 @@ body{
 }
 
 .input_area{
-    background-color: #f5f5c6;
+    background-color: #d5e6e5;
     height:80px;
     width: 40%;
     font-size: 1.5rem;
@@ -62,7 +62,7 @@ body{
     margin: 15px;
     padding: 20px;
     border: 0px;
-    box-shadow: black 5px 8px 5px;
+    /*box-shadow: black 5px 8px 5px;*/
 }
 
 .restart_btn{
@@ -80,5 +80,5 @@ body{
 }
 
 .correct_char{
-    color:darkgreen;
+    color:#8debe9;
 }
