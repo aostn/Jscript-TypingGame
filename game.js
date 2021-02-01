@@ -12,6 +12,12 @@ let quotes_array = [
     "Do not pray for easy lives. Pray to be stronger men."
 ];
 
+// most common used words
+let randword_array = [
+  "the", "of", "you", "word", "because", "number", "about", "come", "against", "know", "other",
+  "only", "think", "after", "these", "most"
+];
+
 // selecting required elements
 let timer_text = document.querySelector(".curr_time");
 let accuracy_text = document.querySelector(".curr_accuracy");
@@ -19,6 +25,7 @@ let error_text = document.querySelector(".curr_errors");
 let cpm_text = document.querySelector(".curr_cpm");
 let wpm_text = document.querySelector(".curr_wpm");
 let quote_text = document.querySelector(".quote");
+let word_text = document.querySelector(".word");
 let input_area = document.querySelector(".input_area");
 let restart_btn = document.querySelector(".restart_btn");
 let cpm_group = document.querySelector(".cpm");
@@ -34,9 +41,37 @@ let accuracy = 0;
 let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
+let wordNo = 0;
 let timer = null;
+let rQ = [];
+
+function randQuote(){
+  alert(randword_array[0]);
+}
+
+
+
 
 function updateQuote() {
+  quote_text.textContent = null;
+  current_quote = quotes_array[quoteNo];
+
+  // separate each character and make an element 
+  // out of each of them to individually style them
+  current_quote.split('').forEach(char => {
+    const charSpan = document.createElement('span')
+    charSpan.innerText = char
+    quote_text.appendChild(charSpan)
+  })
+
+  // roll over to the first quote
+  if (quoteNo < quotes_array.length - 1)
+    quoteNo++;
+  else
+    quoteNo = 0;
+}
+
+function updateWords() {
   quote_text.textContent = null;
   current_quote = quotes_array[quoteNo];
 
@@ -158,7 +193,8 @@ function finishGame() {
 function startGame() {
 
   resetValues();
-  updateQuote();
+  updateWords();
+  //randQuote();
 
   // clear old and start a new timer
   clearInterval(timer);
@@ -180,7 +216,7 @@ function resetValues() {
   accuracy_text.textContent = 100;
   timer_text.textContent = timeLeft + 's';
   error_text.textContent = 0;
-  restart_btn.style.display = "none";
+  restart_btn.style.display = "block";
   cpm_group.style.display = "none";
   wpm_group.style.display = "none";
 }

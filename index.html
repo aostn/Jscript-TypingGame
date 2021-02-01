@@ -30,7 +30,7 @@
     </div>
 
     <div class="quote">Click on the area below to start the game.</div>
-    <textarea class="input_area" placeholder="start typing here..." oninput="processCurrentText()"
+    <textarea class="input_area" placeholder="start typing here..." onkeypress="processCurrentText()"
       onfocus="startGame()"></textarea>
     <button class="restart_btn" onclick="resetValues()">Restart</button>
   </div>
